@@ -1,0 +1,4 @@
+interface:
+  display_name: "KiCad 工程与 PCB 全流程"
+  short_description: "跨机器完成 KiCad 建项、原理图、封装模型、PCB 审查、规则及制造导出"
+  default_prompt: "使用 $lon-kicadflow 处理当前 KiCad 任务，先识别版本、工程状态与修改范围，再执行并验证。"
