@@ -4,6 +4,8 @@
 
 覆盖从创建工程、原理图与库，到 PCB 规则、布局审查、制造导出和跨机器交接的常见任务。默认使用文件、KiCad CLI 与官方 API，不依赖 computer-use 或固定安装盘符。
 
+**原理图默认要求详细中文逐器件注释。** 几乎每个实际器件都需在图内讲清具体功能、真实网络、关键参数和正常/默认状态；重复器件可明确分组，但必须逐位号可追溯，不以“滤波”“保护”等笼统词语代替解释。
+
 ## 安装
 
 ```sh
@@ -29,6 +31,8 @@ $lon-kicadflow 只审查当前PCB的电源、地回流和启动下载，输出HT
 
 $lon-kicadflow 查本机KiCad切换过孔尺寸的快捷键，只回答操作方法。
 
+$lon-kicadflow 全面完善原理图中文注释，逐器件解释具体用途、连接和默认状态；不改电气设计，附注释覆盖清单。
+
 $lon-kicadflow 从当前保存PCB导出Gerber和钻孔，打包制造ZIP，不修改PCB。
 ```
 
@@ -37,6 +41,7 @@ $lon-kicadflow 从当前保存PCB导出Gerber和钻孔，打包制造ZIP，不�
 - [技能入口与任务路由](lon-kicadflow/SKILL.md)
 - [环境探测、CLI、Python与IPC](lon-kicadflow/references/environment-and-ipc.md)
 - [创建工程与原理图](lon-kicadflow/references/projects-and-schematics.md)
+- [逐器件详细中文注释：写法、示例与覆盖验收](lon-kicadflow/references/schematic-annotations.md)
 - [符号、封装、测试结构与3D模型](lon-kicadflow/references/libraries-and-3d.md)
 - [实际PCB创建与编辑方法](lon-kicadflow/references/pcb-editing.md)
 - [规则、布局与布线](lon-kicadflow/references/rules-and-layout.md)
