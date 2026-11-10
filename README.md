@@ -6,6 +6,8 @@
 
 **原理图默认要求详细中文逐器件注释。** 几乎每个实际器件都需在图内讲清具体功能、真实网络、关键参数和正常/默认状态；重复器件可明确分组，但必须逐位号可追溯，不以“滤波”“保护”等笼统词语代替解释。
 
+**复杂工程默认采用分层模块化原理图。** 根页表达系统能量流和控制闭环，子页按输入保护、功率级、控制核心、采样保护、调试通信和测试验收等功能划分；每页写明“输入→处理→输出→验证”，并从根页完成页间接口、网表和 ERC 验收。
+
 ## 安装
 
 ```sh
@@ -33,6 +35,8 @@ $lon-kicadflow 查本机KiCad切换过孔尺寸的快捷键，只回答操作方
 
 $lon-kicadflow 全面完善原理图中文注释，逐器件解释具体用途、连接和默认状态；不改电气设计，附注释覆盖清单。
 
+$lon-kicadflow 将一张平面电源原理图重构为根页和 6 个功能子页，每页写输入、处理、输出和验证方法，核对页间接口与根网表。
+
 $lon-kicadflow 从当前保存PCB导出Gerber和钻孔，打包制造ZIP，不修改PCB。
 ```
 
@@ -41,6 +45,7 @@ $lon-kicadflow 从当前保存PCB导出Gerber和钻孔，打包制造ZIP，不�
 - [技能入口与任务路由](lon-kicadflow/SKILL.md)
 - [环境探测、CLI、Python与IPC](lon-kicadflow/references/environment-and-ipc.md)
 - [创建工程与原理图](lon-kicadflow/references/projects-and-schematics.md)
+- [分层模块化原理图：页划分、接口与验证](lon-kicadflow/references/hierarchical-schematics.md)
 - [逐器件详细中文注释：写法、示例与覆盖验收](lon-kicadflow/references/schematic-annotations.md)
 - [符号、封装、测试结构与3D模型](lon-kicadflow/references/libraries-and-3d.md)
 - [实际PCB创建与编辑方法](lon-kicadflow/references/pcb-editing.md)

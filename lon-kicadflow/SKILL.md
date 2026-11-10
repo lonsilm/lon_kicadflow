@@ -31,6 +31,7 @@ description: 使用文件、KiCad CLI与官方API完成KiCad建项、原理图�
 |---|---|
 | 换电脑、找CLI/Python/库、IPC连接或坐标异常 | [环境与工具](references/environment-and-ipc.md) |
 | 从零建项、分层原理图、加减元件、网表/BOM | [建项与原理图](references/projects-and-schematics.md) |
+| 根页/子页、模块划分、页间接口和学习型验证顺序 | [分层模块化原理图](references/hierarchical-schematics.md) |
 | 绘图时的必读规范：详细中文逐器件说明、默认状态与覆盖验收 | [逐器件中文注释](references/schematic-annotations.md) |
 | 符号/封装、自制测试点、安装孔、跳线、连接器、3D | [库、封装和模型](references/libraries-and-3d.md) |
 | 线宽过孔、板厂工艺、PCB布局/布线、BTB重排 | [规则与布局](references/rules-and-layout.md) |
@@ -77,6 +78,10 @@ python <SKILL>/scripts/kicad_ops.py new-project <不存在的新目录> --layers
 ### 修改设计源
 
 取得当前基线/备份→明确变化集合→修改授权文件并补齐对应中文注释→原生解析/根网表/ERC→逐端点、器件属性及注释覆盖比较→验证保护对象→交付。只改原理图时不自动同步PCB；用户已改变焊盘时优先核对真实封装，不用旧BOM改回去。
+
+### 新建或重构模块化原理图
+
+复杂控制板和电源板先按 [分层模块化原理图](references/hierarchical-schematics.md) 划分根页与子页。根页表达系统能量流和控制闭环；子页分别承载输入保护、功率级、控制核心、采样保护、调试通信和测试验收等功能。每个子页必须可见地写出“输入→处理→输出→验证”，并用稳定网名、层次端口和明确电源域表达页间接口。根网表、ERC、BOM和导出视图从根页验收，不能用独立子页通过替代整项通过。
 
 ### 修改PCB
 
